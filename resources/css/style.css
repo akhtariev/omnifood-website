@@ -3,18 +3,22 @@
 /* ----------------------------------------------------*/
 
 
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
-html {
+html,
+body {
     color: rgb(61, 60, 60);
     font-family: 'Lato', 'Arial', sans-serif;
     font-size: 20px;
     font-weight: 300;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
 }
 
 
@@ -46,17 +50,18 @@ section {
 /* ------LINKS------*/
 
 a:link,
-a:active {
+a:visited {
     color: #e67e22;
     text-decoration: none;
     padding-bottom: 1px; 
     border-bottom: 1px solid #e67e22;
+    -webkit-transition: border-bottom 0.2s, color 0.2s;
     transition: border-bottom 0.2s, color 0.2s;
 }
 
 a:hover,
-a:visited {
-    color: #555;
+a:active {
+    color: #555; 
     border-bottom: 1px solid transparent;
 }
 
@@ -155,6 +160,7 @@ input[type=submit] {
     font-weight: 300;
     text-decoration: none;
     border-radius: 200px;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
     transition: background-color 0.2s, border 0.2s, color 0.2s;
 }
 
@@ -199,6 +205,7 @@ input[type=submit] {
 /* HEADER*/
 /* ----------------------------------------------------*/
 header {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(hsla(0, 0%, 0%, 0.700)), to(hsla(0, 0%, 0%, 0.700))), url(img/hero.jpg);
     background-image: linear-gradient(hsla(0, 0%, 0%, 0.700), hsla(0, 0%, 0%, 0.700)), url(img/hero.jpg);
     background-size: cover;
     background-position: center;
@@ -211,7 +218,8 @@ header {
     width: 1140px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
 }
 
 .logo {
@@ -240,6 +248,7 @@ header {
     text-transform: uppercase;
     font-size: 90%;
     border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
     transition: border-bottom 0.2s;
 }
 
@@ -286,13 +295,18 @@ header {
     opacity: 0.7;
     width: 100%; /* exact width of its parent*/
     height: auto;
-    transform: scale(1.20);
+    -webkit-transform: scale(1.20);
+            transform: scale(1.20);
+    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: opacity 0.5s, -webkit-transform 0.5s;
     transition: transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
 }
 
 .meal-photo img:hover {
     opacity: 1;
-    transform: scale(1.08);
+    -webkit-transform: scale(1.08);
+            transform: scale(1.08);
 }
 
 
@@ -376,6 +390,7 @@ header {
 /* ------------------------------------------*/
 
 .section-testimonials {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.8)), to(rgba(0,0,0,0.8))), url(img/back-customers.jpg);
     background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(img/back-customers.jpg);
     background-size: cover;
     color: white;
@@ -425,7 +440,8 @@ blockquote:before {
     border-radius: 5px;
     width: 90%;
     margin-left: 5%;
-    box-shadow: 0 2px 2px #efefef;
+    -webkit-box-shadow: 0 2px 2px #efefef;
+            box-shadow: 0 2px 2px #efefef;
 }
 
 .plan-box div {
@@ -499,5 +515,92 @@ input[type=checkbox] {
 
 *:focus {outline: none}
 
+/* ----------------------------------------------------*/
+/* FOOTER*/
+/* ----------------------------------------------------*/
+
+footer {
+    background-color: #333;
+    padding: 50px;
+    font-size: 80%;
+}
+
+.footer-nav {
+    list-style: none;
+    float: left;
+}
+
+.social-icons {
+    list-style: none;
+    float: right;
+}
+
+.footer-nav li,
+.social-icons li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-nav li:last-child,
+.social-icons li:last-child {
+    margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-icons li a:link,
+.social-icons li a:visited {
+    text-decoration: none;
+    border: 0;
+    color: #888;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active {
+    color: #ddd;
+}
+
+.social-icons li a:link,
+.social-icons li a:visited {
+    font-size: 160%;
+}
+
+.ion-logo-facebook,
+.ion-logo-twitter,
+.ion-logo-googleplus,
+.ion-logo-instagram {
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+}
+
+.ion-logo-facebook:hover {
+    color: #3b5998;
+}
+
+.ion-logo-twitter:hover {
+    color: #1da1f2;
+}
+
+.ion-logo-googleplus:hover {
+    color: #db4437;
+}
+
+.ion-logo-instagram:hover {
+    color: #c32aa3;
+}
+
+
+
+footer p {
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+    
 
 
